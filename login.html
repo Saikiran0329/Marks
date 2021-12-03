@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <title>Anurag University - Login</title>
+    <link rel="icon" href="./logo1.ico">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+
+    a {
+        text-decoration: none;
+        color: rgb(5, 5, 90);
+    }
+
+    body {
+        /* background-image: url("/bg-img.jpg"); */
+        background-image: url("./friend-gde3a3d0bc_1920.jpg");
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 97vh;
+    }
+
+    .signin {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 365px;
+        height: 440px;
+        border-radius: 25px;
+        border: 2px solid rgb(196, 188, 188);
+        background-color: white;
+    }
+
+    .signin input {
+        position: relative;
+        top: -25px;
+        width: 220px;
+        height: 20px;
+        margin-bottom: 10px;
+        border: none;
+        /* border-bottom:1px solid black ; */
+        outline: none;
+        background-color: lightgray;
+        padding: 8px 10px;
+        border-radius: 5px;
+    }
+
+    ::placeholder {
+        font-size: 13px;
+    }
+
+    .signin img {
+        width: 130px;
+        /* height: 145px; */
+        border-radius: 5px;
+        position: relative;
+        top: -10px;
+        margin-bottom: 20px;
+    }
+
+    #au {
+        margin-top: -5px;
+        margin-bottom: 50px;
+    }
+
+    .signin button {
+        width: 242px;
+        height: 35px;
+        cursor: pointer;
+        position: relative;
+        top: -28px;
+        border-radius: 5px;
+        background-color: rgb(241, 58, 58);
+        font-size: 13px;
+        color: white;
+        border: none;
+        margin-bottom: -10px;
+    }
+    
+    #togglePassword {
+        position: relative;
+        top: -60px;
+        left: 100px;
+        color: #aaa;
+        cursor: pointer;
+    }
+
+    #Forgot {
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: 13px;
+        text-decoration: underline;
+    }
+</style>
+
+<body>
+    <div class="signin">
+        <img src="./signin image1.jpg" alt="">
+        <img id="au" src="./signin image2.jpg" alt="">
+        <input type="text" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <i class="far fa-eye" id="togglePassword"></i>
+        <button onclick="sign()">SIGN IN</button>
+        <a id="sign" href="./admin.html" style="display:none;"></a>
+        <a id="Forgot" href="./forgot.html">forgot password</a>
+    </div>
+</body>
+<script>
+    function sign() {
+        let sign = document.getElementById('sign');
+        sign.click();
+    }
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+    
+    togglePassword.addEventListener('click', function (e) {
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        
+        if (this.classList.contains('fa-eye')) {
+            this.classList.remove('fa-eye');
+            this.classList.add('fa-eye-slash');
+        } else {
+            this.classList.remove('fa-eye-slash');
+            this.classList.add('fa-eye');
+        }
+    });
+</script>
+
+</html>

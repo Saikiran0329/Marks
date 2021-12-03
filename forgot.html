@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <link rel="icon" href="./logo1.ico">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+
+    body {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+        margin: auto;
+        background-color: rgba(255, 255, 255);
+        border-radius: 10px;
+        /* box-shadow: 0px 0px 10px 10px #eee; */
+    }
+
+    .box .fp {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .box .ep{
+        text-align: center;
+    }
+
+    .box p {
+        margin-bottom: 1.5rem;
+        color: rgba(0, 0, 0, 0.7);
+        font-size: .8rem;
+    }
+
+    .email input {
+        width: 15rem;
+        height: 2.2rem;
+        padding: .7rem;
+        margin-bottom: 1.5rem;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        outline: none;
+        font-size: 15px;
+    }
+
+    .box ::placeholder {
+        color: #aaa;
+        font-size: .9rem;
+    }
+
+    .box button {
+        width: 15rem;
+        height: 2rem;
+        color: white;
+        background-color: rgb(241, 6, 6);
+        border: none;
+        border-radius: 5px;
+        font-weight: 550;
+        opacity: 0.8;
+        cursor: pointer;
+    }
+
+    .main {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        background-color: rgb(216 216 240);
+        /* margin: auto; */
+    }
+
+    #inner2{
+        display: none;
+        transform: rotateY(180deg);
+    }
+
+    #inner3{
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="box" id="box">
+            <div id="inner1">
+                <p class="fp">Forgot Password</p>
+                <p class="ep">Enter your E-mail to reset your password</p>
+                <div class="email">
+                    <input type="text" placeholder="E-mail address">
+                </div>
+                <div id="next">
+                    <button>Next</button>
+                </div>
+            </div>
+            <div id="inner2">
+                <p class="fp">Forgot Password</p>
+                <p class="ep">Enter your OTP below</p>
+                <div class="email">
+                    <input type="text" placeholder="OTP">
+                </div>
+                <div id="continue">
+                    <button >Continue</button>
+                </div>
+            </div>
+            <div id="inner3">
+                <p class="fp">Reset Password</p>
+                <p class="ep">Enter your password below</p>
+                <div class="email">
+                    <input type="password" placeholder="Create password">
+                </div>
+                <div class="email">
+                    <input type="password" placeholder="Confirm password">
+                </div>
+                <div>
+                    <a id="dog" style="display: none;" href="./login.html"></a>
+                    <button id="submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let box = document.querySelector('#box');
+    let inner1 = document.querySelector('#inner1');
+    let inner2 = document.querySelector('#inner2');
+    let next = document.querySelector('#next');
+    let conti = document.querySelector('#continue');
+    let submit = document.querySelector('#submit');
+    let dog = document.querySelector('#dog');
+    next.addEventListener('click', ()=> {
+        box.style.transform = 'rotateY(180deg)';
+        box.style.transition = 'all 0.3s linear';
+        inner2.style.display = 'block';
+        inner1.style.display = 'none';
+    });
+    conti.addEventListener('click', ()=> {
+        box.style.transform = 'rotateY(0deg)';
+        box.style.transition = 'all 0.3s linear';
+        inner3.style.display = 'block';
+        inner2.style.display = 'none';
+    });
+    submit.addEventListener('click', ()=>{
+        dog.click();
+    });
+</script>
+</html>

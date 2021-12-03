@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./logo1.ico">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <title>Anurag University - Admin</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        .main {
+            display: flex;
+            flex-direction: column;
+        }
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 20vh;
+            border-bottom: 1px solid #000;
+        }
+        .logo img{
+            width: 15rem;
+            margin-left: 20px;
+            margin-top: 0px;
+        }
+        .mid {
+            position: relative;
+            left: 1rem;
+            text-align: center;
+        }
+        .mid h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .mid p {
+            font-size: 1.2rem;
+        }
+        .icons {
+            display: flex;
+            margin-right: 2rem;
+        }
+        .icons i {
+            font-size: 1.5rem;
+        }
+        .bell {
+            width: 2.5rem;
+            margin-right: 2rem;
+            font-size: 1.65rem;
+            background-color: transparent;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+        }
+        .log-out {
+            width: 7rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: .4rem;
+            font-size: 1rem;
+            background-color: transparent;
+            border-radius: .3rem;
+            cursor: pointer;
+        }
+        .bottom {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .left {
+            position: absolute;
+            max-width: 300px;
+            width: 25vw;
+            height: 80vh;
+            border-right: 1px solid #000;
+            z-index: -1;
+        }
+        .bottom .dropdown {
+            padding: .5rem;
+            margin: 1.1rem;
+        }
+        .fa-bars, .fa-times {
+            font-size: 1.8rem;
+            margin: 15px;
+            cursor: pointer;
+        }
+        .fa-bars{
+            display: none;
+        }
+        .inside{
+            margin-top: 3rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .dropdown, option{
+            cursor: pointer;
+        }
+        #conf{
+            margin: 20px 80px;
+            padding: .5rem;
+            border-radius: .9rem;
+            cursor: pointer;
+            border: 1px solid black;
+        }
+        #conf:hover{
+            /* background-color: #ddd; */
+            transform: scale(1.05);
+            transition: all .1s linear;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+       <div class="top">
+            <div class="logo">
+                <img src="./signin_image-removebg-preview.jpg" alt="">
+            </div>
+            <div class="mid">
+                <h1>PORTAL</h1>
+                <p>Name: Kachiraju Sai Phani Sri Varun Sharma</p>
+            </div>
+            <div class="icons">
+                <button class="fal fa-bell bell"></button> 
+                <button class="log-out" onclick="logout()">
+                    <p>Log out</p>
+                    <i class="fal fa-sign-out" aria-hidden="true"></i>
+                    <a id="home" href="./index.html" style="display:none;"></a>
+                </button>
+            </div>
+        </div>
+        <div class="bottom">
+            <div>
+                <i class="fal fa-bars" id="burger"></i>
+                <i class="fal fa-times" id="cross"></i>
+            </div>
+            <div class="left" id="left">
+                <div class="inside">
+                    <select class="dropdown" name="" id="year">
+                        <option value="">Academic Year</option>
+                        <option value="">2018-2022</option>
+                        <option value="">2019-2023</option>
+                    </select>
+                    <select class="dropdown" name="" id="branch">
+                        <option value="">Branch</option>
+                        <option value="">IT</option>
+                        <option value="">CSE</option>
+                    </select>
+                    <select class="dropdown" name="" id="subject">
+                        <option value="">Subject</option>
+                        <option value="">CC</option>
+                        <option value="">MS</option>
+                    </select>
+                    <select class="dropdown" name="" id="branch">
+                        <option value="">Mid</option>
+                        <option value="">Mid 1</option>
+                        <option value="">Mid 2</option>
+                        <option value="">Mid 3</option>
+                        <option value="">Final</option>
+                    </select>
+                    <button id="conf">Confirm</button>
+                </div>
+            </div>
+            <div class="right">
+
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    cross=document.querySelector('#cross');
+    burger=document.querySelector('#burger');
+    left=document.querySelector('#left');
+    conf=document.querySelector('#conf');
+    cross.addEventListener('click', moveOut);
+    conf.addEventListener('click', moveOut);
+    function logout(){
+        let home=document.getElementById('home');
+        home.click();
+    }
+    burger.addEventListener('click', ()=>{
+        burger.style.display="none";
+        cross.style.display="block";
+        left.style.transition='all 0.5s linear';
+        left.style.transform='translateX(0rem)';
+    });
+    function moveOut(){
+        burger.style.display="block";
+        cross.style.display="none";
+        left.style.transition='all 0.5s linear';
+        left.style.transform='translateX(-20rem)';
+    }
+</script>
+</html>
