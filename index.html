@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./logo1.ico">
+    <title>Anurag University - Home</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .nav img{
+            width: 15rem;
+            position: relative;
+            top: 20px;
+            left: 8rem;
+        }
+        .bg-img img{
+            position: relative;
+            top: 40px;
+            width: 100%;
+            height: 85.3vh;
+            opacity: 0.9;
+            }
+        .container_1 button{
+            width: 15rem;
+            padding: .7rem;
+            margin: .5rem;
+            font-size: 1rem;
+            /* box-shadow: 4px 6px 4px rgb(0 0 0 / 25%); */
+            color: white;
+            background-color: rgba(2, 8, 41, 0.9);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .container_1{
+            position: absolute;
+            top: -14.5vh;
+            left: -0px;
+            /* background-color:white; */
+            margin-top: 125px;
+            margin-left:43%;
+            display:flex;
+            justify-content: center;
+            align-items: center ;
+            /* border: 1px solid black; */
+            border-radius: 4px;
+        }
+        a{
+            text-decoration:none;
+            /* margin-top:30px; */
+            /* padding-top:15px; */
+            /* padding-left:20px; */
+            /* padding-bottom:5px; */
+            /* font-family: 'Courier New', Courier, monospace; */
+            /* display:block; */
+            /* margin-top:2px; */
+            /* margin-bottom: 10px; */
+            /* border:1px solid black; */
+            /* background-color: cornflowerblue; */
+            color:white;
+        }
+        /* #footer {
+            position:absolute;
+            bottom:0;
+            width: 99%;
+            height:40px;   /* Height of the footer *
+            background: linear-gradient(180deg,pink,red);
+        } */
+    </style>
+</head>
+<body>
+<header>
+    <div class="nav">
+        <img src="/signin_image-removebg-preview.jpg" alt="">
+    </div>
+</header>
+    <div class="bg-img">
+        <img src="/bg-img.jpg" alt="">
+    </div>
+    <div class="container_1 move">
+        <a id="dog" style="display: none;" href="/login.html"></a>
+        <button onclick="login()">Admin Login</button>
+        <button onclick="login()">Staff Login</button>
+        <button onclick="login()">Student Login</button>
+    </div>
+    <!-- <div id="footer move">
+        <p>For Queries please contact:XXXXXXXXX</p>
+    </div> -->
+    <script>
+        function login(){
+            let dog = document.getElementById('dog');
+            dog.click();
+        }
+    </script>
+</body>
+</html>
